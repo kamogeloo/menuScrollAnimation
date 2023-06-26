@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body{
+    background-color: #222;
+}
+
+#menu{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.menu-items{
+    margin-left: clamp(4rem, 20vw, 48rem);
+    position: relative;
+    z-index: 2;
+}
+
+.menu-item:not(:hover){
+    opacity: .3;
+    
+}
+
+/* .menu-items:hover , .menu-item{
+    opacity: .3;
+}
+
+
+.menu-items:hover , .menu-item:hover{
+    opacity: 1;
+}*/
+
+
+.menu-items:hover + .menu-background-pattern{
+    background-size: 11vmin 11vmin;
+    opacity: .5;
+
+
+} 
+
+.menu-item{
+    color: #fff;
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-family:"Roboto", sans-serif;
+    cursor: pointer;
+
+    display: block;
+    text-decoration: none;
+    padding: clamp(0.25rem, .5vw, 1rem) 0px;
+    transition: opacity .75s ease;
+}
+
+/* #myImage{
+    display: none;
+    transition: all .75s ease;
+} */
+.fa-solid{
+    font-size: 10rem;
+    color: white;
+    width: 10rem;
+    height: 10rem;
+
+}
+
+.menu-background-pattern{
+    height: 100vh;
+    width: 100vw;
+ /* creating the shape*/
+    background-image: radial-gradient(rgba(2255, 255, 255, .1)5%, transparent 5%);
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    transition: all .75s ease;
+}
+
+/* .menu-background-shape{
+    height: 100%;
+    width:  50%;
+    background-color: rgba(219, 103, 19, 0.855);
+    border-radius: 50%;
+    box-shadow: 5px 10px 20px rgb(255, 94, 0);
+  
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 0;
+    transition: all .75s ease;
+}
+ */
+
+
+
+/*move backgroundImage*/
+
+#menu[data-active-index = "0"] > .menu-background-pattern{
+
+    background-position: -10% -25%;
+    background-color: rgba(219, 103, 19, 0.855);
+    border-radius: 10% 10% 10% 10%;
+    
+    box-shadow: 5px 10px 20px rgb(255, 94, 0);
+  
+}
+
+#menu[data-active-index = "1"] > .menu-background-pattern{
+
+    background-position: 0% -50%;
+}
+
+#menu[data-active-index = "2"] > .menu-background-pattern{
+    background-position: 0% -75%;
+
+}
+
+#menu[data-active-index = "3"] > .menu-background-pattern{
+
+    background-position: 0% -100%;
+
+}
+
+/*move background shapes*/
+#menu[data-active-index = "0"] > .menu-background-shape{
+
+    top: 10%;
+    background-color: sandybrown;
+    box-shadow: 5px 2px 20px rgb(255, 94, 0);
+}
+#menu[data-active-index = "1"] > .menu-background-shape{
+
+    top:20%;
+    background-color: lightsalmon;
+    box-shadow: 5px 5px 20px rgb(255, 94, 0);
+}
+#menu[data-active-index = "2"] > .menu-background-shape{
+
+    top: 30%;
+    background-color: salmon;
+    box-shadow: 5px 10px 20px rgb(255, 94, 0);
+    
+}
+#menu[data-active-index = "3"] > .menu-background-shape{
+
+    top: 80%;
+    background-color: indianred;
+    box-shadow: 5px -5px 20px rgb(255, 94, 0);;
+    
+}
+
