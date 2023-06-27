@@ -105,10 +105,8 @@ body{
 #menu[data-active-index = "0"] > .menu-background-pattern{
 
     background-position: -10% -25%;
-    background-color: rgba(219, 103, 19, 0.855);
-    border-radius: 10% 10% 10% 10%;
-    
-    box-shadow: 5px 10px 20px rgb(255, 94, 0);
+
+   
   
 }
 
